@@ -67,7 +67,7 @@ Desarrollar un almacén de datos moderno utilizando SQL Server para consolidar l
 
 - **Documentación**: Proporcione documentación clara del modelo de datos para apoyar tanto a los responsables de negocio como a los equipos de análisis.
 
---
+---
 
 ### BI: Análisis e Informes (Análisis de Datos)****
 
