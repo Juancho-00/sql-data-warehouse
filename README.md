@@ -1,122 +1,116 @@
+# SQL-Data-Warehouse
+# Proyecto de Almacenamiento de Datos y Análisis
 
-# Data Warehouse and Analytics Project
-
-Welcome to the **Data Warehouse and Analytics Project** repository! 🚀  
-This project demonstrates a comprehensive data warehousing and analytics solution, from building a data warehouse to generating actionable insights. Designed as a portfolio project, it highlights industry best practices in data engineering and analytics.
-
----
-## 🏗️ Data Architecture
-
-The data architecture for this project follows Medallion Architecture **Bronze**, **Silver**, and **Gold** layers:
-![Data Architecture](docs/data_architecture.png)
-
-1. **Bronze Layer**: Stores raw data as-is from the source systems. Data is ingested from CSV Files into SQL Server Database.
-2. **Silver Layer**: This layer includes data cleansing, standardization, and normalization processes to prepare data for analysis.
-3. **Gold Layer**: Houses business-ready data modeled into a star schema required for reporting and analytics.
+¡Bienvenido al repositorio del **Proyecto de Almacenamiento de Datos y Análisis**! 🚀
+Este proyecto demuestra una solución integral de almacenamiento de datos y análisis, desde la creación de un almacén de datos hasta la generación de información útil. Diseñado como un proyecto de portafolio, destaca las mejores prácticas de la industria en ingeniería y análisis de datos.
 
 ---
-## 📖 Project Overview
+## 🏗️ Arquitectura de Datos
 
-This project involves:
+La arquitectura de datos para este proyecto sigue las capas **Bronce**, **Plata** y **Oro** de la Arquitectura Medallion:
+![Arquitectura de Datos](docs/data_architecture.png)
 
-1. **Data Architecture**: Designing a Modern Data Warehouse Using Medallion Architecture **Bronze**, **Silver**, and **Gold** layers.
-2. **ETL Pipelines**: Extracting, transforming, and loading data from source systems into the warehouse.
-3. **Data Modeling**: Developing fact and dimension tables optimized for analytical queries.
-4. **Analytics & Reporting**: Creating SQL-based reports and dashboards for actionable insights.
+1. **Capa Bronce**: Almacena los datos sin procesar tal cual provienen de los sistemas de origen. Los datos se ingieren desde archivos CSV a una base de datos SQL Server.
 
-🎯 This repository is an excellent resource for professionals and students looking to showcase expertise in:
-- SQL Development
-- Data Architect
-- Data Engineering  
-- ETL Pipeline Developer  
-- Data Modeling  
-- Data Analytics  
+2. **Capa Plata**: Esta capa incluye procesos de limpieza, estandarización y normalización de datos para prepararlos para el análisis.
 
----
+3. **Capa Oro**: Alberga datos listos para el negocio, modelados en un esquema de estrella, necesarios para la elaboración de informes y análisis.
 
-## 🛠️ Important Links & Tools:
+## 📖 Resumen del proyecto
 
-Everything is for Free!
-- **[Datasets](datasets/):** Access to the project dataset (csv files).
-- **[SQL Server Express](https://www.microsoft.com/en-us/sql-server/sql-server-downloads):** Lightweight server for hosting your SQL database.
-- **[SQL Server Management Studio (SSMS)](https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16):** GUI for managing and interacting with databases.
-- **[Git Repository](https://github.com/):** Set up a GitHub account and repository to manage, version, and collaborate on your code efficiently.
-- **[DrawIO](https://www.drawio.com/):** Design data architecture, models, flows, and diagrams.
-- **[Notion](https://www.notion.com/):** All-in-one tool for project management and organization.
-- **[Notion Project Steps](https://thankful-pangolin-2ca.notion.site/SQL-Data-Warehouse-Project-16ed041640ef80489667cfe2f380b269?pvs=4):** Access to All Project Phases and Tasks.
+Este proyecto incluye:
+
+1. **Arquitectura de datos**: Diseño de un almacén de datos moderno utilizando las capas **Bronce**, **Plata** y **Oro** de la arquitectura Medallion.
+
+2. **Pipelines ETL**: Extracción, transformación y carga de datos desde los sistemas de origen al almacén.
+
+3. **Modelado de datos**: Desarrollo de tablas de hechos y dimensiones optimizadas para consultas analíticas.
+
+4. **Análisis e informes**: Creación de informes y paneles basados ​​en SQL para obtener información útil.
+
+🎯 Este repositorio es un excelente recurso para profesionales y estudiantes que buscan demostrar su experiencia en:
+- Desarrollo SQL
+- Arquitectura de datos
+- Ingeniería de datos
+- Desarrollo de pipelines ETL
+- Modelado de datos
+- Análisis de datos
 
 ---
 
-## 🚀 Project Requirements
+## 🛠️ Enlaces y herramientas importantes:
 
-### Building the Data Warehouse (Data Engineering)
+¡Todo es gratis!
 
-#### Objective
-Develop a modern data warehouse using SQL Server to consolidate sales data, enabling analytical reporting and informed decision-making.
-
-#### Specifications
-- **Data Sources**: Import data from two source systems (ERP and CRM) provided as CSV files.
-- **Data Quality**: Cleanse and resolve data quality issues prior to analysis.
-- **Integration**: Combine both sources into a single, user-friendly data model designed for analytical queries.
-- **Scope**: Focus on the latest dataset only; historization of data is not required.
-- **Documentation**: Provide clear documentation of the data model to support both business stakeholders and analytics teams.
+- **[Conjuntos de datos](datasets/):** Acceso al conjunto de datos del proyecto (archivos CSV).
+- **[SQL Server Express](https://www.microsoft.com/en-us/sql-server/sql-server-downloads):** Servidor ligero para alojar su base de datos SQL.}
+- **[SQL Server Management Studio (SSMS)](https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16):** Interfaz gráfica de usuario para administrar e interactuar con bases de datos.
+- **[DrawIO](https://www.drawio.com/):** Diseñe arquitecturas de datos, modelos, flujos y diagramas.
+- **[Pasos del proyecto en Notion](https://thankful-pangolin-2ca.notion.site/SQL-Data-Warehouse-Project-16ed041640ef80489667cfe2f380b269?pvs=4):** Acceso a todas las fases y tareas del proyecto.
 
 ---
 
-### BI: Analytics & Reporting (Data Analysis)
+## 🚀 Requisitos del proyecto
 
-#### Objective
-Develop SQL-based analytics to deliver detailed insights into:
-- **Customer Behavior**
-- **Product Performance**
-- **Sales Trends**
+### Creación del almacén de datos (Ingeniería de datos)
 
-These insights empower stakeholders with key business metrics, enabling strategic decision-making.  
+#### Objetivo
+Desarrollar un almacén de datos moderno utilizando SQL Server para consolidar los datos de ventas, lo que permitirá generar informes analíticos y tomar decisiones informadas.
 
-For more details, refer to [docs/requirements.md](docs/requirements.md).
+#### Especificaciones
+- **Fuentes de datos**: Importar datos de dos sistemas de origen (ERP y CRM) proporcionados como archivos CSV.
 
-## 📂 Repository Structure
+- **Calidad de los datos**: Limpiar y resolver los problemas de calidad de los datos antes del análisis.
+- **Integración**: Combine ambas fuentes en un único modelo de datos fácil de usar, diseñado para consultas analíticas.
+
+- **Alcance**: Céntrese únicamente en el conjunto de datos más reciente; no se requiere historización de datos.
+
+- **Documentación**: Proporcione documentación clara del modelo de datos para apoyar tanto a los responsables de negocio como a los equipos de análisis.
+
+---
+
+### BI: Análisis e Informes (Análisis de Datos)****
+
+#### Objetivo
+Desarrollar análisis basados ​​en SQL para proporcionar información detallada sobre:
+- **Comportamiento del cliente**
+- **Rendimiento del producto**
+- **Tendencias de ventas**
+
+Esta información proporciona a las partes interesadas métricas clave para la toma de decisiones estratégicas.
+
+Para más detalles, consulte [docs/requirements.md](docs/requirements.md).
+
+## 📂 Estructura del repositorio
 ```
-data-warehouse-project/
+proyecto-almacén-de-datos/
 │
-├── datasets/                           # Raw datasets used for the project (ERP and CRM data)
+├── datasets/ # Conjuntos de datos sin procesar utilizados para el proyecto (datos ERP y CRM)
 │
-├── docs/                               # Project documentation and architecture details
-│   ├── etl.drawio                      # Draw.io file shows all different techniquies and methods of ETL
-│   ├── data_architecture.drawio        # Draw.io file shows the project's architecture
-│   ├── data_catalog.md                 # Catalog of datasets, including field descriptions and metadata
-│   ├── data_flow.drawio                # Draw.io file for the data flow diagram
-│   ├── data_models.drawio              # Draw.io file for data models (star schema)
-│   ├── naming-conventions.md           # Consistent naming guidelines for tables, columns, and files
+├── docs/ # Documentación del proyecto y detalles de la arquitectura
+│ ├── etl.drawio # Archivo Draw.io que muestra todas las diferentes técnicas y métodos de ETL
+│ ├── data_architecture.drawio # Archivo Draw.io que muestra la arquitectura del proyecto
+│ ├── data_catalog.md # Catálogo de conjuntos de datos, incluyendo descripciones de campos y metadatos
+│ ├── data_flow.drawio # Archivo Draw.io para el diagrama de flujo de datos
+│ ├── data_models.drawio # Archivo Draw.io para modelos de datos (esquema de estrella)
+│ ├── naming-conventions.md # Directrices de nomenclatura consistentes para tablas, columnas y archivos
 │
-├── scripts/                            # SQL scripts for ETL and transformations
-│   ├── bronze/                         # Scripts for extracting and loading raw data
-│   ├── silver/                         # Scripts for cleaning and transforming data
-│   ├── gold/                           # Scripts for creating analytical models
+├── scripts/ # Scripts SQL para ETL y transformaciones
+│ ├── bronze/ # Scripts para extraer y cargar datos sin procesar
+│ ├── silver/ # Scripts para limpiar y transformar datos
+│ ├── gold/ # Scripts para crear modelos analíticos
 │
-├── tests/                              # Test scripts and quality files
+├── tests/ # Scripts de prueba y archivos de calidad
 │
-├── README.md                           # Project overview and instructions
-├── LICENSE                             # License information for the repository
-├── .gitignore                          # Files and directories to be ignored by Git
-└── requirements.txt                    # Dependencies and requirements for the project
+├── README.md # Descripción general del proyecto e instrucciones
+├── LICENSE # Información de licencia del repositorio
+├── .gitignore # Archivos y directorios que se ignorarán Git
+└── requirements.txt # Dependencias y requisitos del proyecto
 ```
+
 ---
 
+## 🛡️ Licencia
 
-## 🛡️ License
+Este proyecto está bajo la licencia [MIT](LICENSE). Puedes usar, modificar y compartir este proyecto libremente, siempre y cuando se cite la fuente adecuadamente.
 
-This project is licensed under the [MIT License](LICENSE). You are free to use, modify, and share this project with proper attribution.
-
-## 🌟 About Me
-
-Hi there! I'm **Baraa Khatib Salkini**, also known as **Data With Baraa**. I’m an IT professional and passionate YouTuber on a mission to share knowledge and make working with data enjoyable and engaging!
-
-Let's stay in touch! Feel free to connect with me on the following platforms:
-
-[![YouTube](https://img.shields.io/badge/YouTube-red?style=for-the-badge&logo=youtube&logoColor=white)](http://bit.ly/3GiCVUE)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/baraa-khatib-salkini)
-[![Website](https://img.shields.io/badge/Website-000000?style=for-the-badge&logo=google-chrome&logoColor=white)](https://www.datawithbaraa.com)
-[![Newsletter](https://img.shields.io/badge/Newsletter-FF5722?style=for-the-badge&logo=substack&logoColor=white)](https://bit.ly/BaraaNewsletter)
-[![PayPal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://paypal.me/baraasalkini)
-[![Join](https://img.shields.io/badge/Join-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@datawithbaraa)
