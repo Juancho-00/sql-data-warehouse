@@ -69,7 +69,7 @@ Desarrollar un almacén de datos moderno utilizando SQL Server para consolidar l
 
 ---
 
-### BI: Análisis e Informes (Análisis de Datos)****
+### **BI: Análisis e Informes (Análisis de Datos)**
 
 #### Objetivo
 Desarrollar análisis basados ​​en SQL para proporcionar información detallada sobre:
