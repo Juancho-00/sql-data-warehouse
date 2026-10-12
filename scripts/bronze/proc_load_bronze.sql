@@ -15,6 +15,9 @@ Parámetros:
     Ninguno.
     Este procedimiento almacenado no acepta parámetros ni devuelve ningún valor.
 
+Uso:
+    EXEC bronze.load_bronze;
+
 ================================================================================
 */
 CREATE OR ALTER PROCEDURE bronze.load_bronze AS
@@ -135,14 +138,17 @@ BEGIN
 		PRINT 'Loading Bronze Layer is Completed';
         PRINT '   - Total Load Duration: ' + CAST(DATEDIFF(SECOND, @batch_start_time, @batch_end_time) AS NVARCHAR) + ' seconds';
 		PRINT '=========================================='
+	
 	END TRY
+    
 	BEGIN CATCH
-		PRINT '=========================================='
-		PRINT 'ERROR OCCURED DURING LOADING BRONZE LAYER'
-		PRINT 'Error Message' + ERROR_MESSAGE();
-		PRINT 'Error Message' + CAST (ERROR_NUMBER() AS NVARCHAR);
-		PRINT 'Error Message' + CAST (ERROR_STATE() AS NVARCHAR);
-		PRINT '=========================================='
-	END CATCH
+        PRINT '=========================================='
+        PRINT 'ERROR OCCURED DURING LOADING BRONZE LAYER'
+        PRINT 'Error Message: ' + ISNULL(ERROR_MESSAGE(), 'No message');
+        PRINT 'Error Number:  ' + ISNULL(CAST(ERROR_NUMBER() AS NVARCHAR), 'No number');
+        PRINT 'Error State:   ' + ISNULL(CAST(ERROR_STATE() AS NVARCHAR), 'No state');
+        PRINT '=========================================='
+    END CATCH
+
 END
 
