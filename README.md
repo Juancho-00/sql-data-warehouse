@@ -83,29 +83,48 @@ Para más detalles, consulte [docs/requirements.md](docs/requirements.md).
 
 ## 📂 Estructura del repositorio
 ```
-proyecto-almacén-de-datos/
+sql-data-warehouse-project/
 │
-├── datasets/ # Conjuntos de datos sin procesar utilizados para el proyecto (datos ERP y CRM)
+├── datasets/                          # Conjuntos de datos sin procesar utilizados para el proyecto
+│   ├── source_crm/                    # Archivos CSV del sistema CRM
+│   │   ├── cust_info.csv              # Información de clientes
+│   │   ├── prd_info.csv               # Información de productos
+│   │   └── sales_details.csv          # Detalle de ventas
+│   └── source_erp/                    # Archivos CSV del sistema ERP
+│       ├── CUST_AZ12.csv              # Datos adicionales de clientes
+│       ├── LOC_A101.csv               # Ubicación de clientes
+│       └── PX_CAT_G1V2.csv            # Categorías de productos
 │
-├── docs/ # Documentación del proyecto y detalles de la arquitectura
-│ ├── etl.drawio # Archivo Draw.io que muestra todas las diferentes técnicas y métodos de ETL
-│ ├── data_architecture.drawio # Archivo Draw.io que muestra la arquitectura del proyecto
-│ ├── data_catalog.md # Catálogo de conjuntos de datos, incluyendo descripciones de campos y metadatos
-│ ├── data_flow.drawio # Archivo Draw.io para el diagrama de flujo de datos
-│ ├── data_models.drawio # Archivo Draw.io para modelos de datos (esquema de estrella)
-│ ├── naming-conventions.md # Directrices de nomenclatura consistentes para tablas, columnas y archivos
+├── docs/                              # Documentación del proyecto y detalles de la arquitectura
+│   ├── data_architecture.png          # Diagrama de la arquitectura del proyecto
+│   ├── data_catalog.md                # Catálogo de datos de la capa Gold, con descripciones de campos y metadatos
+│   ├── data_flow.png                  # Diagrama del flujo (linaje) de datos
+│   ├── data_integration.png           # Diagrama de cómo se relacionan las tablas de CRM y ERP
+│   ├── data_layers.pdf                # Especificación de las capas Bronze, Silver y Gold
+│   ├── data_model.png                 # Modelo de datos (esquema estrella)
+│   ├── ETL.png                        # Técnicas y métodos de ETL
+│   ├── naming_conventions.md          # Convenciones de nombres para tablas, columnas y procedimientos
+│   └── Project_Notes_Sketches.pdf     # Notas y bocetos del proyecto
 │
-├── scripts/ # Scripts SQL para ETL y transformaciones
-│ ├── bronze/ # Scripts para extraer y cargar datos sin procesar
-│ ├── silver/ # Scripts para limpiar y transformar datos
-│ ├── gold/ # Scripts para crear modelos analíticos
+├── scripts/                           # Scripts SQL para ETL y transformaciones
+│   ├── init_database.sql              # Crea la base de datos DataWarehouse y los esquemas
+│   ├── bronze/                        # Scripts para extraer y cargar datos sin procesar
+│   │   ├── ddl_bronze.sql             # Creación de tablas de la capa Bronze
+│   │   └── proc_load_bronze.sql       # Procedimiento de carga bronze.load_bronze
+│   ├── silver/                        # Scripts para limpiar y transformar datos
+│   │   ├── ddl_silver.sql             # Creación de tablas de la capa Silver
+│   │   └── proc_load_silver.sql       # Procedimiento de carga silver.load_silver
+│   └── gold/                          # Scripts para crear modelos analíticos
+│       └── ddl_gold.sql               # Vistas del esquema estrella (dimensiones y hechos)
 │
-├── tests/ # Scripts de prueba y archivos de calidad
+├── tests/                             # Scripts de pruebas de calidad
+│   ├── quality_checks_silver.sql      # Validaciones de calidad de la capa Silver
+│   └── quality_checks_gold.sql        # Validaciones de integridad de la capa Gold
 │
-├── README.md # Descripción general del proyecto e instrucciones
-├── LICENSE # Información de licencia del repositorio
-├── .gitignore # Archivos y directorios que se ignorarán Git
-└── requirements.txt # Dependencias y requisitos del proyecto
+├── README.md                          # Descripción general del proyecto e instrucciones
+├── LICENSE                            # Información de licencia del repositorio
+├── requirements.md                    # Requerimientos de negocio y técnicos del proyecto
+└── requirements.txt                   # Dependencias y requisitos del proyecto
 ```
 
 ---

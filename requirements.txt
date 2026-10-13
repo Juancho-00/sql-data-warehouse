@@ -1,0 +1,48 @@
+# Dependencias y requisitos del proyecto
+# ------------------------------------------------------------
+# Este proyecto se construye 100 % en SQL, por lo que no requiere
+# paquetes de Python. Este archivo lista el software necesario
+# para ejecutarlo y reproducirlo.
+# ------------------------------------------------------------
+
+# === Motor de base de datos ===
+# SQL Server 2022 (Express o Developer, ambas gratuitas)
+#   Necesario para crear la base DataWarehouse y los esquemas bronze, silver y gold.
+#   La función DATETRUNC usada en análisis requiere SQL Server 2022 o superior.
+SQL Server >= 2022
+
+# === Cliente SQL (elegir uno) ===
+# SQL Server Management Studio (SSMS): editor recomendado en Windows
+SSMS >= 19
+# Alternativa multiplataforma: Visual Studio Code + extensión "SQL Server (mssql)"
+
+# === Control de versiones ===
+# Git y una cuenta de GitHub para versionar scripts y documentación
+Git >= 2.40
+
+# === Diagramas ===
+# Draw.io (diagrams.net), versión web o de escritorio
+#   Usado para los diagramas de arquitectura, flujo, integración y modelo en docs/
+Draw.io
+
+# ------------------------------------------------------------
+# Requisitos de configuración
+# ------------------------------------------------------------
+# 1. La instancia de SQL Server debe poder leer la carpeta datasets/,
+#    ya que BULK INSERT usa rutas locales del servidor.
+#    Actualiza las rutas en scripts/bronze/proc_load_bronze.sql según tu equipo.
+# 2. El usuario debe tener permisos para crear bases de datos (dbcreator)
+#    y para ejecutar BULK INSERT (bulkadmin).
+# 3. Los archivos CSV deben conservar su encabezado en la primera fila
+#    y usar coma (,) como separador.
+
+# ------------------------------------------------------------
+# Orden de ejecución
+# ------------------------------------------------------------
+# 1. scripts/init_database.sql
+# 2. scripts/bronze/ddl_bronze.sql
+# 3. scripts/bronze/proc_load_bronze.sql   -> EXEC bronze.load_bronze;
+# 4. scripts/silver/ddl_silver.sql
+# 5. scripts/silver/proc_load_silver.sql   -> EXEC silver.load_silver;
+# 6. scripts/gold/ddl_gold.sql
+# 7. tests/quality_checks_silver.sql y tests/quality_checks_gold.sql
