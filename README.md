@@ -46,7 +46,7 @@ Este proyecto incluye:
 - **[SQL Server Express](https://www.microsoft.com/en-us/sql-server/sql-server-downloads):** Servidor ligero para alojar su base de datos SQL.}
 - **[SQL Server Management Studio (SSMS)](https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16):** Interfaz gráfica de usuario para administrar e interactuar con bases de datos.
 - **[DrawIO](https://www.drawio.com/):** Diseñe arquitecturas de datos, modelos, flujos y diagramas.
-- **[Pasos del proyecto en Notion](https://thankful-pangolin-2ca.notion.site/SQL-Data-Warehouse-Project-16ed041640ef80489667cfe2f380b269?pvs=4):** Acceso a todas las fases y tareas del proyecto.
+- **[Pasos del proyecto en Notion](https://app.notion.com/p/SQL-Data-Warehouse-Project-d6aabb3d162e83d0819301a0e64cf256?source=copy_link):** Acceso a todas las fases y tareas del proyecto.
 
 ---
 
