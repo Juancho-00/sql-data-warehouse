@@ -1,6 +1,6 @@
 # **Naming Conventions**
 
-This document outlines the naming conventions used for schemas, tables, views, columns, and other objects in the data warehouse.
+Este documento describe las convenciones de nombres usadas para esquemas, tablas, vistas, columnas y demás objetos del data warehouse.
 
 ## **Table of Contents**
 
@@ -17,65 +17,65 @@ This document outlines the naming conventions used for schemas, tables, views, c
 
 ## **General Principles**
 
-- **Naming Conventions**: Use snake_case, with lowercase letters and underscores (`_`) to separate words.
-- **Language**: Use English for all names.
-- **Avoid Reserved Words**: Do not use SQL reserved words as object names.
+- **Convenciones de nombres**: Usar snake_case, con letras minúsculas y guiones bajos (`_`) para separar las palabras.
+- **Idioma**: Usar inglés para todos los nombres.
+- **Evitar palabras reservadas**: No usar palabras reservadas de SQL como nombres de objetos.
 
 ## **Table Naming Conventions**
 
 ### **Bronze Rules**
-- All names must start with the source system name, and table names must match their original names without renaming.
+- Todos los nombres deben comenzar con el nombre del sistema fuente, y los nombres de las tablas deben coincidir con sus nombres originales, sin renombrarlas.
 - **`<sourcesystem>_<entity>`**  
-  - `<sourcesystem>`: Name of the source system (e.g., `crm`, `erp`).  
-  - `<entity>`: Exact table name from the source system.  
-  - Example: `crm_customer_info` → Customer information from the CRM system.
+  - `<sourcesystem>`: Nombre del sistema fuente (p. ej., `crm`, `erp`).  
+  - `<entity>`: Nombre exacto de la tabla en el sistema fuente.  
+  - Ejemplo: `crm_customer_info` → Información de clientes del sistema CRM.
 
 ### **Silver Rules**
-- All names must start with the source system name, and table names must match their original names without renaming.
+- Todos los nombres deben comenzar con el nombre del sistema fuente, y los nombres de las tablas deben coincidir con sus nombres originales, sin renombrarlas.
 - **`<sourcesystem>_<entity>`**  
-  - `<sourcesystem>`: Name of the source system (e.g., `crm`, `erp`).  
-  - `<entity>`: Exact table name from the source system.  
-  - Example: `crm_customer_info` → Customer information from the CRM system.
+  - `<sourcesystem>`: Nombre del sistema fuente (p. ej., `crm`, `erp`).  
+  - `<entity>`: Nombre exacto de la tabla en el sistema fuente.  
+  - Ejemplo: `crm_customer_info` → Información de clientes del sistema CRM.
 
 ### **Gold Rules**
-- All names must use meaningful, business-aligned names for tables, starting with the category prefix.
+- Todas las tablas deben tener nombres significativos y alineados con el negocio, comenzando con el prefijo de su categoría.
 - **`<category>_<entity>`**  
-  - `<category>`: Describes the role of the table, such as `dim` (dimension) or `fact` (fact table).  
-  - `<entity>`: Descriptive name of the table, aligned with the business domain (e.g., `customers`, `products`, `sales`).  
-  - Examples:
-    - `dim_customers` → Dimension table for customer data.  
-    - `fact_sales` → Fact table containing sales transactions.  
+  - `<category>`: Describe el rol de la tabla, como `dim` (dimensión) o `fact` (tabla de hechos).  
+  - `<entity>`: Nombre descriptivo de la tabla, alineado con el dominio de negocio (p. ej., `customers`, `products`, `sales`).  
+  - Ejemplos:
+    - `dim_customers` → Tabla de dimensión con los datos de clientes.  
+    - `fact_sales` → Tabla de hechos con las transacciones de ventas.  
 
 #### **Glossary of Category Patterns**
 
 | Pattern     | Meaning                           | Example(s)                              |
 |-------------|-----------------------------------|-----------------------------------------|
-| `dim_`      | Dimension table                  | `dim_customer`, `dim_product`           |
-| `fact_`     | Fact table                       | `fact_sales`                            |
-| `report_`   | Report table                     | `report_customers`, `report_sales_monthly`   |
+| `dim_`      | Tabla de dimensión               | `dim_customer`, `dim_product`           |
+| `fact_`     | Tabla de hechos                  | `fact_sales`                            |
+| `report_`   | Tabla de reporte                 | `report_customers`, `report_sales_monthly`   |
 
 ## **Column Naming Conventions**
 
 ### **Surrogate Keys**  
-- All primary keys in dimension tables must use the suffix `_key`.
+- Todas las llaves primarias de las tablas de dimensión deben usar el sufijo `_key`.
 - **`<table_name>_key`**  
-  - `<table_name>`: Refers to the name of the table or entity the key belongs to.  
-  - `_key`: A suffix indicating that this column is a surrogate key.  
-  - Example: `customer_key` → Surrogate key in the `dim_customers` table.
+  - `<table_name>`: Nombre de la tabla o entidad a la que pertenece la llave.  
+  - `_key`: Sufijo que indica que la columna es una llave sustituta.  
+  - Ejemplo: `customer_key` → Llave sustituta de la tabla `dim_customers`.
   
 ### **Technical Columns**
-- All technical columns must start with the prefix `dwh_`, followed by a descriptive name indicating the column's purpose.
+- Todas las columnas técnicas deben comenzar con el prefijo `dwh_`, seguido de un nombre descriptivo que indique el propósito de la columna.
 - **`dwh_<column_name>`**  
-  - `dwh`: Prefix exclusively for system-generated metadata.  
-  - `<column_name>`: Descriptive name indicating the column's purpose.  
-  - Example: `dwh_load_date` → System-generated column used to store the date when the record was loaded.
+  - `dwh`: Prefijo reservado exclusivamente para metadatos generados por el sistema.  
+  - `<column_name>`: Nombre descriptivo que indica el propósito de la columna.  
+  - Ejemplo: `dwh_load_date` → Columna generada por el sistema que guarda la fecha en que se cargó el registro.
  
 ## **Stored Procedure**
 
-- All stored procedures used for loading data must follow the naming pattern:
+- Todos los procedimientos almacenados que se usan para cargar datos deben seguir este patrón de nombre:
 - **`load_<layer>`**.
   
-  - `<layer>`: Represents the layer being loaded, such as `bronze`, `silver`, or `gold`.
-  - Example: 
-    - `load_bronze` → Stored procedure for loading data into the Bronze layer.
-    - `load_silver` → Stored procedure for loading data into the Silver layer.
+  - `<layer>`: Representa la capa que se carga, como `bronze`, `silver` o `gold`.
+  - Ejemplo: 
+    - `load_bronze` → Procedimiento almacenado para cargar datos en la capa Bronze.
+    - `load_silver` → Procedimiento almacenado para cargar datos en la capa Silver.
